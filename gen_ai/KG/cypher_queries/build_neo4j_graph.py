@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 
-from langchain_community.graphs import Neo4jGraph
 from neo4j import GraphDatabase
 
 load_dotenv("./env")
@@ -66,18 +65,6 @@ def build_knowledge_graph():
         driver.close()
 
 
-# Function to query a neo4j database
-def connect_and_query(cypher_query: str):
-    driver = GraphDatabase.driver(NEO4J_URI, auth=AUTH)
-    try:
-        with driver.session(database=NEO4J_DATABASE) as session:
-            result = session.run(cypher_query)
-            for record in result:
-                print(record["name"])
-    except Exception as e:
-        print(f"Error: {e}")
-    finally:
-        driver.close()
 
 if __name__ == "__main__":
     build_knowledge_graph()
