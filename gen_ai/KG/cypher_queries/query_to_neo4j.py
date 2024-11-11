@@ -35,13 +35,6 @@ cypher = """
 result = kg.query(cypher)
 print(f"There are {result[0]['NumOfCountries']} nodes in this graph labelled as country.")
 
-cypher = """
-  MATCH (albert:Person {name: "Albert Einstein"}) 
-  RETURN albert
-  """
-result = kg.query(cypher)
-print(result)
-
 
 
 
