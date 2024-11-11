@@ -28,7 +28,7 @@ populate_vector_index_params = {
     "node_label": "Movie",
     "attribute_to_embed": "tagline",
     "attribute_embedding": "tagline.Embedding",
-    "openAiApiKey":OPENAI_API_KEY, 
+    "openAiApiKey": OPENAI_API_KEY, 
     "openAiEndpoint": OPENAI_ENDPOINT
 }
 

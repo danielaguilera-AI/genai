@@ -15,7 +15,7 @@ NEO4J_PASSWORD = os.getenv('NEO4J_PASSWORD')
 NEO4J_DATABASE = os.getenv('NEO4J_DATABASE')
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-OPENAI_ENDPOINT = os.getenv('OPENAI_BASE_URL') + '/embeddings'
+OPENAI_ENDPOINT = os.getenv('OPENAI_ENDPOINT') + '/embeddings'
 
 # Connect to the knowledge graph instance using LangChain
 kg = Neo4jGraph(
