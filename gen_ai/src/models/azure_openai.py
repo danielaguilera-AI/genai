@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
+import os
 
 from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
-
 from langchain_core.prompts import PromptTemplate
 from langchain_core.vectorstores import InMemoryVectorStore
 
@@ -13,6 +13,7 @@ def get_llm():
 def get_embedding():
     load_dotenv('.env', override=True)
     return AzureOpenAIEmbeddings(azure_deployment="text-embedding-ada-002", api_version="2023-05-15")
+
 
 
 if __name__ == '__main__':
@@ -33,6 +34,8 @@ if __name__ == '__main__':
     # Test embedding model
     embeddings = get_embedding()
     text = "LangChain is the framework for building context-aware reasoning applications"
+
+    vector = embeddings.embed_query(text)
 
     vectorstore = InMemoryVectorStore.from_texts(
         [text],
